@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  web:
+    container_name: 'web'
+    user: $DOCKER_UID:$DOCKER_GID
+    build:
+      context: .
+      args:
+        UID: $DOCKER_UID
+        GID: $DOCKER_GID
+        UNAME: $USER
+    tty: true
+    working_dir: '/usr/src/app/gongbu-rails'
+    volumes:
+      - .:/usr/src/app/gongbu-rails:cached
+    ports: 
+      - "3000:3000"
+    command: /bin/bash
+    depends_on:
+      - db
+  db:
+    container_name: 'db'
+    image: mysql:8.0.32
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - "8080:8080"
+    volumes:
+      - gongbu-rails-data:/var/lib/mysql
+volumes:
+  gongbu-rails-data:
