@@ -3,6 +3,11 @@ RUN apt-get update \
 	&& apt-get install -y sudo --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
+ENV DOCKERIZE_VERSION v0.6.1
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
 ARG UID=1001
 ARG GID=1001
 ARG UNAME=yuri
