@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+유닛테스트, 통합테스트(rspec으로)
+레일즈튜토리얼 복습
