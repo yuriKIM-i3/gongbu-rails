@@ -2,5 +2,6 @@
   Word.create!(vocabulary: Faker::Book.title,
                 pronunciation: Faker::Movie.title,
                 meaning: Faker::Movie.quote,
-                example: Faker::Games::Overwatch.quote)
+                example: Faker::Games::Overwatch.quote,
+                views: index)
 end

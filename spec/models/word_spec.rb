@@ -3,10 +3,7 @@ require 'rails_helper'
 RSpec.describe Word, type: :model do
 
   before do
-    vocabulary = "test"
-    pronunciation = "test"
-    meaning = "This is a test"
-    @word = Word.new(vocabulary: vocabulary, pronunciation: pronunciation, meaning: meaning)
+    @word = FactoryBot.build(:word)
   end
 
   it "정상적인 word인스턴스 생성" do
@@ -14,9 +11,7 @@ RSpec.describe Word, type: :model do
   end
   
   it "vocabulary 공백 확인" do
-    vocabulary = ""
-    @word.vocabulary = " "
-    expect(@word).to be_invalid
+    expect(FactoryBot.build(:word, vocabulary: nil)).to be_invalid
   end
 
   it "pronunciation 공백 확인" do
