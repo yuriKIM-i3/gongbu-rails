@@ -13,6 +13,7 @@ class WordsController < ApplicationController
 
   def create
     Word.save(word_params)
+    redirect_to root_url
   end
 
   def edit
@@ -20,6 +21,7 @@ class WordsController < ApplicationController
 
   def update
     @word.update(word_params)
+    redirect_to @word
   end
 
   def destroy
