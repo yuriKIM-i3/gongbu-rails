@@ -1,0 +1,8 @@
+<%= form_with(model: @word) do |f| %>
+  <div class="field">
+    <%= f.text_area :vocabulary, placeholder: "単語" %>
+    <%= f.text_area :pronunciation, placeholder: "発音" %>
+    <%= f.text_area :meaning, placeholder: "意味" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,14 @@
+<ol>
+  <% @words.each do |word| %>
+    <li>
+      <%= word.vocabulary %>
+      <%= word.pronunciation %>
+      <%= word.meaning %>
+      <%= word.example %>
+      Posted <%= time_ago_in_words(word.created_at) %> ago.
+      <%= word.views %>
+    </li>
+  <% end %>
+</ol>
+
+<%= debug(params) if Rails.env.development? %>
