@@ -9,10 +9,12 @@ class WordsController < ApplicationController
   end
 
   def new
+    @word = Word.new
   end
 
   def create
-    Word.save(word_params)
+    @word = Word.new(word_params)
+    @word.save
     redirect_to root_url
   end
 
