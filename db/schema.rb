@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_27_121149) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_120359) do
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "password"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "words", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "vocabulary", null: false
     t.string "pronunciation", null: false
@@ -19,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_121149) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "views"
+    t.integer "user_id"
   end
 
 end
