@@ -25,3 +25,13 @@ Things you may want to cover:
 
 유닛테스트, 통합테스트(rspec으로)
 레일즈튜토리얼 복습
+
+rails s -b 0.0.0.0
+
+rails g model User name:string password:string role:string
+
+rails db:migrate
+
+rails db:seed
+
+bundle exec rspec

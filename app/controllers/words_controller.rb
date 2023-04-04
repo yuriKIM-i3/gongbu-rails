@@ -1,6 +1,8 @@
 class WordsController < ApplicationController
 
   def index
+    data = open('sample.yml', 'r') { |f| YAML.load(f) }
+    puts
     @words = Word.all
   end
 

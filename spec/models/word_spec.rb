@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Word, type: :model do
 
   before do
-    @word = FactoryBot.build(:word)
+    @word = FactoryBot.build(:word1)
   end
 
   it "정상적인 word인스턴스 생성" do
